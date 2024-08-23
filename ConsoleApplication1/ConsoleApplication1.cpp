@@ -9,14 +9,24 @@
 #include <chrono>
 
 //#define ARGS
+//#define RAND_NUMS
+
+
 
 int main(int argc, char *argv[])
 {   
+   
+
+
+
+
+    #if defined RAND_NUMS
     for (int i = 0; i < 10; i++) {
         srand(time(0));
         std::cout << rand() << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        std::this_thread::sleep_for(std::chrono::milliseconds(800));
     }
+    #endif
 
     #if defined ARGS
     std::cout << "you have entered " << argc << " command line arguments" << std::endl;
@@ -30,7 +40,24 @@ int main(int argc, char *argv[])
     #endif
     return 0;
     
-}
+} 
+
+/*void calculator() {
+        if (argc >= 4) {
+            switch () {
+                case argv[2] == "+":
+                    return argv[1] + argv[3];
+                    break;
+                case argv[2] == "-":
+                    return argv[1] - argv[3];
+                    break;
+            }
+        }
+        
+        
+        
+        
+    }*/
 /*std::string name1, name2, name3;
     int age = 10;
     std::cout << "enter your name and age ";
